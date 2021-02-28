@@ -2,7 +2,7 @@ package com.premiumminds;
 
 import java.util.Objects;
 
-public class Coordinates {
+class Coordinates {
 
     long x;
     long y;
