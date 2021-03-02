@@ -87,7 +87,7 @@ public final class PokemonLogic {
     /**
      * Check with regex if the user input are valid directions.
      *
-     * @param directionString
+     * @param directionString String with the user input
      * @return true (if input is valid) or false (if input is invalid)
      */
     private static boolean validDirections(String directionString) {

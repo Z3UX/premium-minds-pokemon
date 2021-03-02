@@ -3,7 +3,6 @@ package com.premiumminds;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class PokemonLogicTest {
 
@@ -16,6 +15,9 @@ class PokemonLogicTest {
             "N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N",
             "N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N",
             "N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N",}));
-
+        assertEquals(70, PokemonLogic.moveAsh(new String[]{"S","N","N","N","N","N","N","N","N","N",
+                "N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N",
+                "N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N",
+                "N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N",}));
     }
 }
