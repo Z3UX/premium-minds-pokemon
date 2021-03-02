@@ -17,6 +17,20 @@ public final class PokemonLogic {
      */
     public static String[] getDirections() {
 
+        // Print Pokémon logo
+        System.out.println("                                  ,'\\\n" +
+                "    _.----.        ____         ,'  _\\   ___    ___     ____\n" +
+                "_,-'       `.     |    |  /`.   \\,-'    |   \\  /   |   |    \\  |`.\n" +
+                "\\      __    \\    '-.  | /   `.  ___    |    \\/    |   '-.   \\ |  |\n" +
+                " \\.    \\ \\   |  __  |  |/    ,','_  `.  |          | __  |    \\|  |\n" +
+                "   \\    \\/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |\n" +
+                "    \\     ,-'/  /   \\    ,'   | \\/ / ,`.|         /  /   \\  |     |\n" +
+                "     \\    \\ |   \\_/  |   `-.  \\    `'  /|  |    ||   \\_/  | |\\    |\n" +
+                "      \\    \\ \\      /       `-.`.___,-' |  |\\  /| \\      /  | |   |\n" +
+                "       \\    \\ `.__,'|  |`-._    `|      |__| \\/ |  `.__,'|  | |   |\n" +
+                "        \\_.-'       |__|    `-._ |              '-.|     '-.| |   |\n" +
+                "                                `'                            '-._|");
+
         System.out.println("Insert Ash's move sequence to get the total number of caught Pokémon: ");
 
         // Get user input from Scanner
@@ -26,8 +40,8 @@ public final class PokemonLogic {
 
         // Check if directions given are valid
         if (!validDirections(directionString)) {
-            System.out.println("You gave Ash wrong directions! Please try again...\n");
-            getDirections();
+            System.out.println("You gave Ash wrong directions.\n");
+            System.exit(0);
         }
 
         // Return directions split into an Array
