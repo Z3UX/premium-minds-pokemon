@@ -2,12 +2,12 @@ package com.premiumminds;
 
 import java.util.Objects;
 
-class Coordinates {
+class HouseCoordinates {
 
     long x;
     long y;
 
-    public Coordinates(long x, long y) {
+    public HouseCoordinates(long x, long y) {
         this.x = x;
         this.y = y;
     }
@@ -16,7 +16,7 @@ class Coordinates {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Coordinates that = (Coordinates) o;
+        HouseCoordinates that = (HouseCoordinates) o;
         return x == that.x && y == that.y;
     }
 

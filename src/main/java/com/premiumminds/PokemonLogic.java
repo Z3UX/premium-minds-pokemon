@@ -3,10 +3,10 @@ package com.premiumminds;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public final class PokemonGame {
+public final class PokemonLogic {
 
     // Private constructor to prevent instantiation
-    private PokemonGame() {}
+    private PokemonLogic() {}
 
     /**
      * Returns the input of the user with the directions for Ash.
@@ -33,6 +33,7 @@ public final class PokemonGame {
 
         System.out.println("Insert Ash's move sequence to get the total number of caught Pokémon: ");
 
+        // Get user input from Scanner
         Scanner scanner = new Scanner(System.in);
 
         String directionString = scanner.nextLine();
@@ -43,27 +44,29 @@ public final class PokemonGame {
             getDirections();
         }
 
+        // Return directions split into an Array
         return splitDirections(directionString);
     }
 
     /**
-     * Logic to get the number of all the caught Pokémon in the unique houses Ash moves into.
+     * Logic to move Ash through the several directions inputted and get the number unique houses he visits.
      *
-     * @param directions inputed by the user, divided into an array
+     * @param directions inputted by the user, divided into an array
+     * @return number of unique houses visited witch will be the same as the number of caught Pokémon
      */
-    public static void catchPokemon(String[] directions) {
+    public static long moveAsh(String[] directions) {
 
-        // First house initial coordinates
+        // First house visited by Ash and initial coordinates
         long x = 0;
         long y = 0;
 
-        // Set to store all unique houses coordinates
-        HashSet<Coordinates> houseCoordinates = new HashSet<>();
+        // Set to store all the coordinates of the houses Ash visits
+        HashSet<HouseCoordinates> housesVisited = new HashSet<>();
 
         // Add Ash's initial house coordinates, x = 0 and y = 0, to the set
-        houseCoordinates.add(new Coordinates(x,y));
+        housesVisited.add(new HouseCoordinates(x,y));
 
-        // Iterate through the directions inputted by the user and rearrange coordinates accordingly
+        // Iterate through the directions inputted by the user and rearrange current house coordinates accordingly
         for (String direction : directions) {
 
             switch (direction) {
@@ -73,12 +76,12 @@ public final class PokemonGame {
                 case "O" -> x--; // Ash moves West = x - 1
             }
 
-            // Save current house coordinates to the set
-            houseCoordinates.add(new Coordinates(x,y));
+            // Save current house coordinates to the houses visited set
+            housesVisited.add(new HouseCoordinates(x,y));
         }
 
-        // Return number of unique houses visited that equals the number of caught Pokémon
-        System.out.print(houseCoordinates.size());
+        // Return the number of unique houses visited witch will be the same as the number of caught Pokémon
+        return housesVisited.size();
     }
 
     /**
