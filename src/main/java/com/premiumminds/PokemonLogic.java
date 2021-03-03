@@ -18,20 +18,9 @@ public final class PokemonLogic {
     public static String[] getDirections() {
 
         // Print Pokémon logo
-        System.out.println("                                  ,'\\\n" +
-                "    _.----.        ____         ,'  _\\   ___    ___     ____\n" +
-                "_,-'       `.     |    |  /`.   \\,-'    |   \\  /   |   |    \\  |`.\n" +
-                "\\      __    \\    '-.  | /   `.  ___    |    \\/    |   '-.   \\ |  |\n" +
-                " \\.    \\ \\   |  __  |  |/    ,','_  `.  |          | __  |    \\|  |\n" +
-                "   \\    \\/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |\n" +
-                "    \\     ,-'/  /   \\    ,'   | \\/ / ,`.|         /  /   \\  |     |\n" +
-                "     \\    \\ |   \\_/  |   `-.  \\    `'  /|  |    ||   \\_/  | |\\    |\n" +
-                "      \\    \\ \\      /       `-.`.___,-' |  |\\  /| \\      /  | |   |\n" +
-                "       \\    \\ `.__,'|  |`-._    `|      |__| \\/ |  `.__,'|  | |   |\n" +
-                "        \\_.-'       |__|    `-._ |              '-.|     '-.| |   |\n" +
-                "                                `'                            '-._|");
+        System.out.println(Messages.POKEMON_LOGO);
 
-        System.out.println("Insert Ash's move sequence to get the total number of caught Pokémon: ");
+        System.out.println(Messages.REQUEST_USER_INPUT);
 
         // Get user input from Scanner
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +29,7 @@ public final class PokemonLogic {
 
         // Check if directions given are valid
         if (!validDirections(directionString)) {
-            System.out.println("You gave Ash wrong directions.\n");
+            System.out.println(Messages.ERROR_MESSAGE);
             System.exit(0);
         }
 
